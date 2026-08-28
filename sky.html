@@ -1,0 +1,260 @@
+<!-- Version Decleration -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <!-- HEAD -->
+    <head>
+
+        <!-- Meta Data -->
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
+        
+        <!-- Title -->
+        <title>Mr. Sky - Dashboard</title>
+        
+        <!-- External Files -->
+        <link rel = "stylesheet" href = "Stylesheets/sky.css">
+    </head>
+
+    <!-- BODY -->
+    <body>
+
+        <!-- Main Container -->
+        <div class = "app">
+
+            <!-- Sidebar -->
+            <aside class = "sidebar">
+
+                <!-- Heading -->
+                <div class = "brand">
+                    🤖 Mr. Sky
+                    <span>AI Assistant</span>
+                 </div>
+
+                 <!-- Navigator-->
+                 <nav class = "nav">
+
+                      <!-- Dashboard -->
+                     <button class = "active">
+                     🏠 Dashboard
+                    </button>
+
+                    <!-- Conversations -->
+                    <button>
+                        💬 Conversations
+                    </button>
+
+                    <!-- Memory -->
+                    <button>
+                        🧠 Memory
+                    </button>
+
+                    <!-- Settings -->
+                    <button>
+                        ⚙ Settings
+                    </button>
+                </nav>
+
+                <!-- System -->
+                <div class = "system">
+
+                    <strong>System Info</strong>
+
+                    <!-- Line break-->
+                    <br><br>
+
+                    Mode:
+                    <span class = "online">● Active</span>
+
+                    <!-- Line Break -->
+                    <br><br>
+
+                    Model:
+                    Mr. Sky v1.0
+
+                   <!-- Line Break -->
+                   <br><br>
+
+                    Requests:
+                    <span id = "requestCount">0</span>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+            
+                <!-- Topbar -->
+                <div class = "topbar">
+
+                    <!-- # -->
+                    <div id = "heading">
+
+                        <!-- Title & Sub-title -->
+                        <h1>Dashboard</h1>
+                        <div class = "subtitle">
+                            Overview of Mr. Sky's activity
+                        </div>
+                    </div>
+
+                    <!-- Status Bar -->
+                    <div class = "status">
+                        🟢 Active
+                    </div>
+                </div>
+                
+                <!-- Grid -->
+                <section class = "grid">
+
+                    <!-- Activity -->
+                    <div class = "panel activity">
+
+                         <!-- Heading -->
+                        <h2>
+                            Mr. Sky is doing...
+                        </h2>
+
+                        <!-- Logs -->
+                        <div class = "log" id = "log">
+
+                            <!-- Each Line -->
+                            <div class = "line">
+
+                                <!-- Time of Activity -->
+                                <span class = "time">
+                                    [--:--:--] Waiting for your instruction...
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side panels -->
+                    <div class = "side-stack">
+
+                        <!-- Status -->
+                        <div class = "panel" id = "status">
+
+                            <!-- Heading -->
+                            <h2>
+                                Mr. Sky Status
+                            </h2>
+
+                             <!-- Availability -->
+                            <div class = "online">
+                                ● Ready
+                            </div>
+
+                            <!-- Current Approach -->
+                            <p>
+                                Waiting for your next instruction.
+                            </p>
+                        </div>
+
+                        <!-- Memory -->
+                        <div class = "panel" id = "memory">
+
+                            <!-- Heading -->
+                            <h2>
+                                Memory Snapshot
+                            </h2>
+
+                            <!-- List -->
+                            <ul>
+
+                                <!-- Items -->
+                                <li>User prefers technology topics.</li>
+                                <li>Mr. Sky is a personal AI project.</li>
+                                <li>Development mode enabled.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick actions -->
+                        <div class = "panel" id = "quick">
+
+                        <!-- Heading -->
+                           <h2>
+                               Quick Actions
+                           </h2>
+
+                               <!-- Tools -->
+                               <div class = "content">
+
+                                   <!-- Weather Tool -->
+                                   <button
+                                   onclick = "quick('What is the weather?')">
+                                       🌤 Weather
+                                   </button>
+
+                                   <!-- Calculator -->
+                                   <button
+                                   onclick="quick('Open calculator')">
+                                       🧮 Calculator
+                                  </button>
+
+                                  <!-- Memory -->
+                                  <button
+                                  onclick="quick('Show my memory')">
+                                      🧠 Memory
+                                  </button>
+
+                                  <!-- Web Search Option -->
+                                  <button
+                                  onclick="quick('Search the web')">
+                                      🌐 Search
+                                 </button>
+                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Input + Reply -->
+                <section class = "bottom">
+
+                    <!-- User input -->
+                    <div class = "panel">
+
+                        <!-- Heading -->
+                        <h2>
+                            Your Instruction
+                        </h2>
+
+                        <!-- Input Area -->
+                        <textarea
+                            id = "input"
+                            placeholder = "Type your instruction here..."></textarea>
+
+                        <!-- Send Button -->
+                        <button
+                            class = "send"
+                            onclick = "sendMessage()">
+
+                            <!-- Written Content -->
+                            ➤ Send
+                        </button>
+                    </div>
+
+                    <!-- Mr. Sky reply -->
+                    <div class = "panel">
+
+                        <!-- Heading -->
+                        <h2>
+                            Mr. Sky's Reply
+                        </h2>
+
+                        <!-- Mr. Sky's Reply -->
+                        <div
+                            class = "reply"
+                            id = "reply">
+
+                            <!-- Written Content -->
+                            Mr. Sky is waiting for your instruction.
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <!-- Script -->
+        <script src = "Scripts/sky.js"></script>
+    </body>
+</html>
