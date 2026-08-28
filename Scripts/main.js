@@ -1,6 +1,7 @@
 // Get Data from HTML
 const password = document.getElementById("password");
 const error = document.getElementById("error");
+const sendingScreen = document.getElementById("sendingScreen");
 
 // Function for Make a request to backend
 async function sendToBackend(){
@@ -8,6 +9,10 @@ async function sendToBackend(){
     // URLs
     API_URL = "https://mr-sky-backend-feh5.onrender.com";
     localURL = "http://127.0.0.1:5000"
+    
+    // Start Sending Animation
+    error.textContent = "";
+    sendingScreen.style.display = "flex";
     
     // Try
     try{
@@ -24,6 +29,9 @@ async function sendToBackend(){
             })
         });
         
+        // End Sending Animation
+        sendingScreen.style.display = "none";
+        
         // Clear Input
         password.value = "";
         
@@ -32,6 +40,9 @@ async function sendToBackend(){
         
         // If Login Successful
         if (response.ok){
+            
+            // Erase Error
+            error.textContent = "";
             
             // Store Session Token
             sessionStorage.setItem("mr_sky_token", data.token);

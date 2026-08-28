@@ -16,7 +16,7 @@ function time() {
 }
 
 // Add activity log
-function addLog(text, cls = "") {
+function addLog(text, cls = "", addCircle = false) {
 
     // Create Element 
     const line = document.createElement("div");
@@ -31,6 +31,17 @@ function addLog(text, cls = "") {
         <span class = "${cls}">
             ${text}
         </span>`;
+    
+    // If want to add animation
+    if (addCircle){
+        
+        // Create Elememt
+        sendingCircle = document.createElement("div");
+        sendingCircle.id = "sendingCircle";
+        
+        // Append circle into line
+        line.appendChild(sendingCircle);
+    }
 
     // Append in Logs
     log.appendChild(line);
@@ -88,6 +99,11 @@ async function sendToBackend(msg){
                 signal: controller.signal
             }
         );
+        
+        // Remove Sending Circle Animation
+        try{
+            sendingCircle.remove();
+        }catch{}
         
         // Make Variables & Objects
         const decoder = new TextDecoder();
@@ -158,7 +174,7 @@ function sendMessage(){
     
     // Make Initial log
     log.innerHTML = "";
-    addLog(`send to backend: ${text}`, "time");
+    addLog("Sending you request to backend", "time", true);
         
     // Clear Input Box
     input.value = "";
