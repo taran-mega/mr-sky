@@ -159,6 +159,12 @@ body {
     padding: 9px 0;
     border-bottom: 1px solid #111c2e;
     color: #aebbd0;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }
 
 .app main .activity #log .line:last-child {
@@ -183,6 +189,17 @@ body {
 
 .app main .activity #log .line .error{
     color: #ff000a;
+}
+
+.app main .activity #log .line #sendingCircle{
+    width: 15px;
+    height: 15px;
+    
+    border: 2px solid #60728e;
+    border-top-color: #333;
+    border-radius: 50%;
+    
+    animation: spin 1s linear infinite;
 }
 
 .app main .grid .side-stack {
@@ -342,5 +359,15 @@ body {
     
     .app main .bottom .panel{
         width: 45%;
+    }
+}
+
+@keyframes spin{
+    
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
     }
 }

@@ -23,6 +23,29 @@ body{
     color: white;
 }
 
+.login #sendingScreen{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.login #sendingScreen #sendingText{
+    font-size: 20px;
+}
+
+.login #sendingScreen #sendingCircle{
+    width: 20px;
+    height: 20px;
+    
+    border: 5px solid white;
+    border-top-color: #333;
+    border-radius: 50%;
+    
+    animation: spin 1s linear infinite;
+}
+
 .login button{
     padding: 10px 25px;
     cursor: pointer;
@@ -31,4 +54,14 @@ body{
 .login #error{
     color: #ff6b6b;
     display: none;
+}
+
+@keyframes spin{
+    
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
