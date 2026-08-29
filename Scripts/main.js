@@ -7,8 +7,8 @@ const sendingScreen = document.getElementById("sendingScreen");
 async function sendToBackend(){
     
     // URLs
-    API_URL = "https://mr-sky-backend-feh5.onrender.com";
-    localURL = "http://127.0.0.1:5000"
+    const API_URL = "https://mr-sky-backend-feh5.onrender.com";
+    const localURL = "http://127.0.0.1:5000"
     
     // Start Sending Animation
     error.textContent = "";
@@ -31,10 +31,10 @@ async function sendToBackend(){
             })
         });
         
-        //
+        /*
         const text = await response.text();
         console.log("Status:", response.status);
-        console.log("Text:", text)
+        console.log("Text:", text)*/
         
         // End Sending Animation
         sendingScreen.style.display = "none";
