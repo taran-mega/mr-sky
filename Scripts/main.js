@@ -18,9 +18,11 @@ async function sendToBackend(){
     try{
         
         // Fetch URL
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(
+            `${API_URL}/login`, {
             
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -28,6 +30,11 @@ async function sendToBackend(){
                 password: password.value
             })
         });
+        
+        //
+        const text = await response.text();
+        console.log("Status:", response.status);
+        console.log("Text:", text)
         
         // End Sending Animation
         sendingScreen.style.display = "none";
@@ -48,7 +55,7 @@ async function sendToBackend(){
             sessionStorage.setItem("mr_sky_token", data.token);
             
             // Switch to Mr. Sky
-            window.location.href = "sky.html";
+            window.location.href = `${API_URL}/sky.html`;
         }else{
             
             // Make error
@@ -63,6 +70,7 @@ async function sendToBackend(){
         console.error("Error Name", error.name);
         console.error("Error Message", error.message);
     }
+    
 }
 
 // Control for Keyboard
