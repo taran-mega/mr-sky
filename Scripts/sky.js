@@ -60,7 +60,7 @@ async function sendToBackend(msg){
     let timeout;
     const token = sessionStorage.getItem("mr_sky_token");
     const API_URL = "https://mr-sky-backend-feh5.onrender.com";
-    const localURL = "http://127.0.0.1:5000";
+    const local_URL = "http://127.0.0.1:5000";
     
     // Reset Timeout Function
     function resetTimeout(timeout){

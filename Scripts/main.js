@@ -31,11 +31,6 @@ async function sendToBackend(){
             })
         });
         
-        /*
-        const text = await response.text();
-        console.log("Status:", response.status);
-        console.log("Text:", text)*/
-        
         // End Sending Animation
         sendingScreen.style.display = "none";
         
@@ -46,16 +41,30 @@ async function sendToBackend(){
         const data = await response.json();
         
         // If Login Successful
-        if (response.ok){
-            
+        if (data.ok){
+        
             // Erase Error
             error.textContent = "";
             
-            // Store Session Token
-            sessionStorage.setItem("mr_sky_token", data.token);
+            // Making request for Mr. Sky
+            const skyResponse = await fetch(
+                `${API_URL}/sky.html`, {
+                    
+                    method: "GET",
+                    credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            );
             
-            // Switch to Mr. Sky
+            // Returned data
+            const skyData = await skyResponse.text();
+            console.log(skyData);
+            
+            // Switch Location
             window.location.href = `${API_URL}/sky.html`;
+            
         }else{
             
             // Make error
