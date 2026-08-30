@@ -174,7 +174,7 @@ function sendMessage(){
     
     // Make Initial log
     log.innerHTML = "";
-    addLog("Sending you request to backend", "time", true);
+    addLog("Sending you request to backend", "init", true);
         
     // Clear Input Box
     input.value = "";
