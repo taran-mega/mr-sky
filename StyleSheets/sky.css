@@ -141,14 +141,22 @@ body {
 
 .app main .grid .activity {
     height: 100%;
+    min-height: 0;
 }
 
 .app main .activity #log {
     height: 80%;
+    min-height: 0;
+    flex: 1;
+    
     overflow-y: auto;
+    overflow-x: auto;
+    
     background: #070d18;
+    
     border: 1px solid #16243b;
     border-radius: 10px;
+    
     padding: 15px;
 
     font-family: Consolas, monospace;
@@ -257,8 +265,11 @@ body {
 
 .app main #instruction-panel textarea {
     width: 100%;
+    min-height: 0;
     resize: none;
     flex: 1;
+    
+    overflow-y: auto;
 
     border: 1px solid #263957;
     border-radius: 10px;
@@ -316,6 +327,10 @@ body {
 
 .app main .reply {
     height: 65%;
+    min-height: 0;
+    flex: 1;
+    
+    overflow-y: auto;
 
     background: #070d18;
     border: 1px solid #16243b;
