@@ -148,7 +148,6 @@ body {
 }
 
 .app main .activity #log {
-    height: 80%;
     min-height: 0;
     flex: 1;
     resize: none;
@@ -329,13 +328,12 @@ body {
     background: #4b91ff;
 }
 
-.app main .reply-panel{
+.app main #reply-panel{
     display: flex;
     flex-direction: column;
 }
 
-.app main .reply-panel .reply {
-    height: 65%;
+.app main #reply-panel #reply {
     min-height: 0;
     flex: 1;
     resize: none;
