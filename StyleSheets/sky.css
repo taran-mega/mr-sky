@@ -148,6 +148,7 @@ body {
     height: 80%;
     min-height: 0;
     flex: 1;
+    resize: none;
     
     overflow-y: auto;
     overflow-x: auto;
@@ -329,6 +330,7 @@ body {
     height: 65%;
     min-height: 0;
     flex: 1;
+    resize: none;
     
     overflow-y: auto;
 
