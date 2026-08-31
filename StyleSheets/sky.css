@@ -142,6 +142,9 @@ body {
 .app main .grid .activity {
     height: 100%;
     min-height: 0;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 .app main .activity #log {
@@ -322,11 +325,16 @@ body {
     height: 30px;
 }
 
-.app main .send:hover {
+.app main #instruction-panel #input-controls .send:hover {
     background: #4b91ff;
 }
 
-.app main .reply {
+.app main .reply-panel{
+    display: flex;
+    flex-direction: column;
+}
+
+.app main .reply-panel .reply {
     height: 65%;
     min-height: 0;
     flex: 1;
