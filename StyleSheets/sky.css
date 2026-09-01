@@ -41,7 +41,7 @@ body {
     padding: 22px 14px;
     
     overflow-y: auto;
-    overflox-x: hidden;
+    overflow-x: hidden;
     
     min-height: 0;
     height: 100%;
@@ -125,7 +125,7 @@ body {
     margin-top: 5px;
 }
 
-.app main topbar .status {
+.app main .topbar .status {
     padding: 10px 15px;
     border: 1px solid #1d304d;
     border-radius: 20px;
@@ -258,7 +258,9 @@ body {
     min-height: 0;
 }
 
-.app main .bottom panel{
+.app main .bottom .panel{
+    min-width: 0;
+    min-height: 0;
     height: 100%;
 }
 
@@ -384,7 +386,7 @@ body {
         gap: 5px;
     }
 
-    .app sidevar .nav button {
+    .app .sidebar .nav button {
         white-space: nowrap;
         width: auto;
     }
@@ -404,7 +406,7 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .app main .grid activity{
+    .app main .grid .activity{
         height: 100%;
     }
     
