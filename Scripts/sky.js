@@ -63,7 +63,7 @@ async function sendToBackend(msg){
     const local_URL = "http://127.0.0.1:5000";
     
     // Reset Timeout Function
-    function resetTimeout(timeout){
+    function resetTimeout(){
         
         // Clear Timeout
        clearTimeout(timeout);
@@ -120,7 +120,7 @@ async function sendToBackend(msg){
             if (done){break;}
             
             // Reset Timeout
-            resetTimeout(timeout);
+            resetTimeout();
             
             // Make buffer
             buffer += decoder.decode(value, {stream : true});
@@ -170,7 +170,7 @@ async function sendToBackend(msg){
     finally{
         
         // Clearn Timeout
-        clearTimeout(timeout)
+        clearTimeout(timeout);
     }
 }
 
