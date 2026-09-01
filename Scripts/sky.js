@@ -227,6 +227,6 @@ input.addEventListener("keydown", (e) => {
     ){
         // Send Message
         e.preventDefault();
-        sendMessage ();
+        sendMessage();
     }
 });
