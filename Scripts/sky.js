@@ -140,8 +140,16 @@ async function sendToBackend(msg){
                 // Make Data
                 const data = JSON.parse(line);
                 
-                // Add Log
-                addLog(data.text, data.type);
+                // Check Data Category
+                if (data.category == "log"){
+                
+                    // Add Log
+                    addLog(data.text, data.type);
+                }
+                else{
+                    
+                    reply.textContent += data.text;
+                }
             }
         }
     }
