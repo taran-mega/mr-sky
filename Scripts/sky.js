@@ -100,10 +100,15 @@ async function sendToBackend(msg){
             }
         );
         
-        // Remove Sending Circle Animation
+        // Reset elements after sending requesting
         try{
             sendingCircle.remove();
-        }catch{}
+        }catch{
+            
+        }
+        finally{
+            reply.textContent = "";
+        }
         
         // Make Variables & Objects
         const decoder = new TextDecoder();
