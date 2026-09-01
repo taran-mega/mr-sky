@@ -148,7 +148,9 @@ async function sendToBackend(msg){
                 }
                 else{
                     
+                    // Add Reply
                     reply.textContent += data.text;
+                    reply.scrollTop = reply.scrollHeight;
                 }
             }
         }
