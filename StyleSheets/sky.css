@@ -251,8 +251,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
+    
     margin-top: 18px;
+    
     height: 40%;
+    min-height: 0;
 }
 
 .app main .bottom panel{
@@ -264,6 +267,8 @@ body {
     flex-direction: column;
     
     overflow: hidden;
+    
+    min-height: 0;
 }
 
 .app main #instruction-panel textarea {
@@ -337,6 +342,8 @@ body {
 .app main #reply-panel{
     display: flex;
     flex-direction: column;
+    
+    min-height: 0;
 }
 
 .app main #reply-panel #reply {
