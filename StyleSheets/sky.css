@@ -302,9 +302,8 @@ body {
 
 .app main #instruction-panel #input-controls #model-select{
     color: white;
-    background: #4740ff;
+    background: #4063ff;
     
-    opacity: 0.4;
     backdrop-filter: blur(10px);
     
     border-radius: 8px;
