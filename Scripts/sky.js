@@ -3,9 +3,11 @@ const log = document.getElementById("log");
 const input = document.getElementById("input");
 const reply = document.getElementById("reply");
 const requestCount = document.getElementById("requestCount");
+const sendBtn = document.getElementById("sendBtn");
 
 // Variables
 let requests = 0;
+let isProcessing = false;
 
 // Function for Getting Current Local Time
 function time() {
@@ -52,6 +54,10 @@ function addLog(text, cls = "", addCircle = false) {
 
 // Function for Taking Response From Python Server
 async function sendToBackend(msg){
+    
+    // Process On
+    isProcessing = true;
+    sendBtn.disabled = true;
     
     // Make Controller
     const controller = new AbortController();
@@ -121,8 +127,13 @@ async function sendToBackend(msg){
             // Extract Data from reader
             const {value, done} = await reader.read();
             
-            // Break Loop, if Everything is done
-            if (done){break;}
+            // Check if Everything is done
+            if (done){
+                
+                isProcessing = false;
+                sendBtn.disabled = false;
+                break;
+            }
             
             // Reset Timeout
             resetTimeout();
@@ -163,6 +174,9 @@ async function sendToBackend(msg){
     
     // Catch Error
     catch(error){
+    
+        isProcessing = false;
+        sendBtn.disabled = false;
         
         // Error Details
         console.error("Couldn't connect to backend server.");
@@ -183,6 +197,11 @@ async function sendToBackend(msg){
 
 // Function For Sending Message
 function sendMessage(){
+    
+    // Stop Request Sending
+    if (isProcessing){
+        return;
+    }
     
     // User Input
     const text = input.value.trim();
