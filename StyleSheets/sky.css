@@ -269,6 +269,7 @@ body {
 .app main #instruction-panel textarea {
     width: 100%;
     min-height: 0;
+    min-width: 0;
     resize: none;
     flex: 1;
     
@@ -335,6 +336,7 @@ body {
 
 .app main #reply-panel #reply {
     min-height: 0;
+    min-width: 0;
     flex: 1;
     resize: none;
     
